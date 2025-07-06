@@ -1,0 +1,33 @@
+# Node.js Abhängigkeiten
+node_modules/
+
+# Produktions-Builds
+dist/
+build/
+
+# temporäre Dateien
+*.log
+*.tmp
+*.temp
+
+# macOS spezifisch
+.DS_Store
+
+# Umgebungsvariablen
+.env
+.env.local
+.env.*.local
+
+# IDEs/Editoren
+.vscode/
+.idea/
+
+# npm/Yarn caches
+.npm/
+.yarn/
+
+# GitHub Pages Cache
+.gh-pages/
+
+# andere
+coverage/
