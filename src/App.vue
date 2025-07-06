@@ -9,7 +9,6 @@
 </template>
 <script setup lang="ts">
 import MandelbrotViewer from "./views/Mandelbrot.vue";
-
 </script>
 
 <style scoped>
