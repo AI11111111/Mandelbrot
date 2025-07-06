@@ -1,11 +1,16 @@
 <template>
-  <ul>
-    <li><RouterLink to="/" exact-active-class="active">Grafische Darstellung</RouterLink></li>
-    <li><RouterLink to="/videos" exact-active-class="active">Video</RouterLink></li>
-  </ul>
+  <div class="min-h-screen bg-white text-gray-800">
+    <nav class="bg-blue-600 text-white p-4 flex gap-4 justify-center">
+      <router-link to="/grafik" class="hover:underline">Grafik</router-link>
+      <router-link to="/videos" class="hover:underline">Videos</router-link>
+    </nav>
+
+    <main class="p-4">
+      <router-view />
+    </main>
+  </div>
 </template>
-<script setup lang="ts">
-</script>
+
 
 <style scoped>
 .error {
