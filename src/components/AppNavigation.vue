@@ -4,7 +4,10 @@
     <li><RouterLink to="/videos" exact-active-class="active">Videos</RouterLink></li>
   </ul>
 </template>
-
+<main>
+<mandelbrot-viewer/>
+<videos/>
+</main>
 <style scoped>
 ul {
   list-style-type: none;
@@ -35,3 +38,6 @@ a.active {
   background-color: #4caf50;
 }
 </style>
+<script setup lang="ts">
+import Videos from '@/views/Videos.vue'
+</script>
