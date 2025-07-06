@@ -11,7 +11,7 @@
       ></canvas>
 
       <!-- Info Panel + Controls -->
-      <div class="w-72 font-mono text-sm bg-gray-100 p-4 rounded shadow-inner flex flex-col justify-between h-[700px]">
+      <div class="w-72 font-mono text-sm bg-gray-100 p-4 rounded shadow-inner flex flex-col justify-between h-[500px]">
         <div>
           <h2 class="text-xl font-semibold mb-4">Mandelbrot-Iteration</h2>
 
