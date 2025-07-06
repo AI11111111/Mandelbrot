@@ -6,7 +6,6 @@
 </template>
 <main>
 <mandelbrot-viewer/>
-<videos/>
 </main>
 <style scoped>
 ul {
