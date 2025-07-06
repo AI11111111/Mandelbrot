@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50">
+  <div class="min-h-screen flex items-center justify-center">
     <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 items-center">
       <!-- Canvas -->
       <canvas
