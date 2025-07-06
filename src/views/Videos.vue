@@ -20,15 +20,15 @@
 <script setup lang="ts">
 const videos = [
   {
-    id: 'dQw4w9WgXcQ',
+    id: 'v=dctJ7ISkU-4',
     title: 'Was ist die Mandelbrot-Menge?',
   },
   {
-    id: '2gN_Yi4W2CE',
+    id: 'v=IKG7AW2lmt0',
     title: 'Komplexe Zahlen erklärt',
   },
   {
-    id: 'VgDJzrC5o9E',
+    id: 'v=_78kGnsYXLc',
     title: 'Visualisierung der Iteration',
   },
 ]
