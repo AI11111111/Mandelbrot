@@ -1,11 +1,10 @@
 {
-  "homepage": "https://ai11111111.github.io/mandelbrot",
   "name": "projekt",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "deploy": "gh-pages -d dist --git git --message \"Deploy\"",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
