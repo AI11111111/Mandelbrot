@@ -4,11 +4,9 @@
     <li><RouterLink to="/videos" exact-active-class="active">Video</RouterLink></li>
   </ul>
   <main>
-    <mandelbrot-viewer/>
   </main>
 </template>
 <script setup lang="ts">
-import MandelbrotViewer from "./views/Mandelbrot.vue";
 </script>
 
 <style scoped>
