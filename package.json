@@ -1,11 +1,9 @@
 {
-  "homepage": "https://ai11111111.github.io/mandelbrot",
   "name": "projekt",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "deploy": "gh-pages -d dist --git git --message \"Deploy\"",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -31,7 +29,6 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^9.22.0",
     "eslint-plugin-vue": "~10.0.0",
-    "gh-pages": "^6.3.0",
     "jiti": "^2.4.2",
     "npm-run-all2": "^7.0.2",
     "postcss": "^8.5.6",
