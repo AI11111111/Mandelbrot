@@ -64,7 +64,7 @@ const canvas = ref(null)
 const width = 700
 const height = 700
 const zoom = 200
-const offsetX = width / 2
+const offsetX = width / 2.5
 const offsetY = height / 2
 
 const inputIter = ref(1)
@@ -175,7 +175,7 @@ function updateDynamicIteration() {
 
 function animate(timestamp) {
   if (!lastUpdate) lastUpdate = timestamp
-  if (isAnimating.value && timestamp - lastUpdate > 2000) {
+  if (isAnimating.value && timestamp - lastUpdate > 1500) {
     maxIter.value += direction
     if (maxIter.value >= 50 || maxIter.value <= 1) direction *= -1
     inputIter.value = maxIter.value
