@@ -1,24 +1,17 @@
+// src/router/index.ts
 import { createRouter, createWebHistory } from 'vue-router'
-import Videos from '@/views/Videos.vue'
 import Mandelbrot from '@/views/Mandelbrot.vue'
+import Videos from '@/views/Videos.vue'
+
+const routes = [
+  { path: '/', redirect: '/grafik' },
+  { path: '/grafik', name: 'Mandelbrot', component: Mandelbrot },
+  { path: '/videos', name: 'Videos', component: Videos },
+]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Mandelbrot,
-    },
-    {
-      path: '/about',
-      name: 'videos',
-      component: Videos,
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-    },
-  ],
+  history: createWebHistory(),
+  routes,
 })
 
 export default router
