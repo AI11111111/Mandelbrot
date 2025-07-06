@@ -63,8 +63,8 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 const canvas = ref(null)
 const width = 700
 const height = 700
-const zoom = 150
-const offsetX = width / 1.5
+const zoom = 200
+const offsetX = width / 2
 const offsetY = height / 2
 
 const inputIter = ref(1)
