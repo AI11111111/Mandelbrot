@@ -116,7 +116,7 @@ function drawPoint(ctx, x, y) {
 
   ctx.save()
   ctx.fillStyle = 'yellow'
-  ctx.strokeStyle = 'darkred'
+  ctx.strokeStyle = 'bg-green-500'
   ctx.lineWidth = 2
   ctx.beginPath()
   ctx.arc(px, py, 6, 0, 2 * Math.PI)
