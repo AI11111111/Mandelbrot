@@ -3,8 +3,6 @@
     <li><RouterLink to="/" exact-active-class="active">Grafische Darstellung</RouterLink></li>
     <li><RouterLink to="/videos" exact-active-class="active">Video</RouterLink></li>
   </ul>
-  <main>
-  </main>
 </template>
 <script setup lang="ts">
 </script>

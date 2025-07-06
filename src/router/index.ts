@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import AppNavigation from "@/components/AppNavigation.vue";
 import Videos from '@/views/Videos.vue'
 import Mandelbrot from '@/views/Mandelbrot.vue'
 
