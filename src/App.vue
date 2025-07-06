@@ -1,56 +1,43 @@
 <template>
-  <div class=" bg-white text-gray-800">
-    <nav class="bg-blue-600 text-white p-4 flex gap-4 justify-center">
-      <router-link to="/grafik" class="hover:underline">Grafik</router-link>
-      <router-link to="/videos" class="hover:underline">Videos</router-link>
+  <div class="min-h-screen bg-gray-50 text-gray-800 font-sans">
+    <!-- Stylisierte Navigation -->
+    <nav class="bg-white shadow sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <h1 class="text-2xl font-bold hsla(160, 100%, 37%, 1)">🎨 Mandelbrot</h1>
+          <div class="flex space-x-6 text-sm font-medium">
+            <RouterLink
+              to="/grafik"
+              class="transition duration-200 px-3 py-2 rounded bg-blue-100 hover:text-blue-600"
+              :class="{ 'bg-blue-100 text-white': $route.path === '/grafik' }"
+            >
+                <ImageIcon class="inline w-4 h-4 mr-1" /> Grafik
+            </RouterLink>
+            <RouterLink
+              to="/videos"
+              class="transition duration-200 px-3 py-2 rounded hover:bg-blue-100 hover:text-blue-600"
+              :class="{ 'bg-blue-100 text-white': $route.path === '/videos' }"
+            >
+              <Video class="inline w-4 h-4 mr-1" />  Videos
+            </RouterLink>
+          </div>
+        </div>
+      </div>
     </nav>
 
-    <main class="p-4">
-      <router-view />
+    <!-- Dynamischer Inhalt -->
+    <main class="p-6 max-w-5xl mx-auto">
+      <RouterView />
     </main>
   </div>
 </template>
-
+<script setup>
+import { Video, Image as ImageIcon } from 'lucide-vue-next'
+</script>
 
 <style scoped>
-.error {
-  color: red;
-  margin-top: 1rem;
-}
-ul {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-  z-index: 1000;
-}
-
-li {
-  float: left;
-}
-
-a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-a:hover:not(.active) {
-  background-color: #111111;
-}
-
-a.active {
-  background-color: #4caf50;
-}
-
+/* Optional: sanfte Übergänge bei Seitenwechsel */
 main {
-  padding-top: 50px; /* damit der Inhalt nicht unter der Leiste klebt */
+  transition: opacity 0.3s ease;
 }
 </style>
