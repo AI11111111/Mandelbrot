@@ -5,7 +5,6 @@
   </ul>
 </template>
 <main>
-<mandelbrot-viewer/>
 </main>
 <style scoped>
 ul {
