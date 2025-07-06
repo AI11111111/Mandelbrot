@@ -1,0 +1,56 @@
+@import './base.css';  /* Importiert eine separate CSS-Basisdatei */
+@import "tailwindcss";
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+p, h2 {
+  color: black;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+:root {
+  --bg-color: #1e1e1e;
+  --text-color: #eee;
+  --border-color: #444;
+  --axis-color: #ddd;
+  --point-color: #ff4c4c;
+  --point-stroke: #ff0000;
+}
+
+canvas {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
