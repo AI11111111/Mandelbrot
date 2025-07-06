@@ -8,32 +8,7 @@
   </main>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
-import MandelbrotViewer from "@/views/Mandelbrot.vue";
-
-const loading = ref(false)
-const userData = ref<string | null>(null)
-const error = ref<string | null>(null)
-
-async function loadUserData() {
-  loading.value = true
-  error.value = null
-  userData.value = null
-
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users/1')
-    const data = await response.json()
-    console.log(data)
-    userData.value = JSON.stringify(data, null, 2)
-  } catch (err: any) {
-    console.error(err)
-    error.value = 'Fehler beim Laden der Daten.'
-  } finally {
-    loading.value = false
-  }
-}
-
-
+import MandelbrotViewer from "./views/Mandelbrot.vue";
 </script>
 
 <style scoped>
