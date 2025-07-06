@@ -115,7 +115,7 @@ function drawPoint(ctx, x, y) {
   const py = offsetY - y * zoom
 
   ctx.save()
-  ctx.fillStyle = 'red'
+  ctx.fillStyle = 'yellow'
   ctx.strokeStyle = 'darkred'
   ctx.lineWidth = 2
   ctx.beginPath()
