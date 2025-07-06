@@ -23,6 +23,3 @@ pnpm-debug.log*
 # Umgebungsdateien
 .env
 .env.*.local
-
-# optional: GitHub Pages deploys
-.gh-pages/
