@@ -8,7 +8,7 @@ import { ghPages } from 'vite-plugin-gh-pages'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/AI11111111.github.io/Mandelbrot',
+  base: '/AI11111111.github.io/Mandelbrot/dist/',
   plugins: [
     vue(),
     vueDevTools(),
