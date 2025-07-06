@@ -175,7 +175,7 @@ function updateDynamicIteration() {
 
 function animate(timestamp) {
   if (!lastUpdate) lastUpdate = timestamp
-  if (isAnimating.value && timestamp - lastUpdate > 1000) {
+  if (isAnimating.value && timestamp - lastUpdate > 1500) {
     maxIter.value += direction
     if (maxIter.value >= 50 || maxIter.value <= 1) direction *= -1
     inputIter.value = maxIter.value
