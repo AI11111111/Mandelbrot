@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import MandelbrotViewer from "./views/Mandelbrot.vue";
+</script>
 <template>
   <ul>
     <li><RouterLink to="/" exact-active-class="active">Grafische Darstellung</RouterLink></li>
@@ -7,9 +10,6 @@
     <mandelbrot-viewer/>
   </main>
 </template>
-<script setup lang="ts">
-import MandelbrotViewer from "./views/Mandelbrot.vue";
-</script>
 
 <style scoped>
 .error {
