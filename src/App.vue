@@ -1,14 +1,17 @@
-<template><ul>
-<li><RouterLink to="/" exact-active-class="active">Grafische Darstellung</RouterLink></li>
-<li><RouterLink to="/about" exact-active-class="active">About</RouterLink></li>
-</ul>
-<main>
-<mandelbrot-viewer/>
-</main>
+<template>
+  <ul>
+    <li><RouterLink to="/" exact-active-class="active">Grafische Darstellung</RouterLink></li>
+    <li><RouterLink to="/about" exact-active-class="active">About</RouterLink></li>
+  </ul>
+  <main>
+    <mandelbrot-viewer/>
+  </main>
 </template>
-
 <script setup lang="ts">
+import MandelbrotViewer from "./views/Mandelbrot.vue";
+
 </script>
+
 <style scoped>
 .error {
   color: red;
