@@ -11,7 +11,7 @@
       ></canvas>
 
       <!-- Info Panel + Controls -->
-      <div class="w-72 font-mono text-sm bg-gray-100 p-4 rounded shadow-inner flex flex-col justify-between h-[500px]">
+      <div class="w-72 font-mono text-sm bg-gray-100 p-4 rounded shadow-inner flex flex-col justify-between h-[700px]">
         <div>
           <h2 class="text-xl font-semibold mb-4">Mandelbrot-Iteration</h2>
 
@@ -64,7 +64,7 @@ const canvas = ref(null)
 const width = 700
 const height = 700
 const zoom = 200
-const offsetX = width / 2.5
+const offsetX = width / 1.5
 const offsetY = height / 2
 
 const inputIter = ref(1)
