@@ -12,7 +12,7 @@ export default defineConfig({
     vueDevTools(),
     tailwindcss(),
   ],
-  base: '/Mandelbrot/',
+  base: '/',
   build: {
     sourcemap: false,
   },
