@@ -15,6 +15,9 @@ export default defineConfig({
     tailwindcss(),
     ghPages()
   ],
+  build: {
+    sourcemap: false,
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
