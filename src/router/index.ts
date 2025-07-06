@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AppNavigation from "@/components/AppNavigation.vue";
 import Videos from '@/views/Videos.vue'
+import Mandelbrot from '@/views/Mandelbrot.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +9,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: AppNavigation,
+      component: Mandelbrot,
     },
     {
       path: '/about',
