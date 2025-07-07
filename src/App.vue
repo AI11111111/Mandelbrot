@@ -8,7 +8,7 @@
               class="flex-2 text-center text-2xl font-bold  h-16"
               :class="{ 'bg-[hsla(160,_100%,_37%,_.2)]': $route.path === '/grafik' }"
             >
-              Mandelbrot – Grafik
+              Grafik
             </RouterLink>
             <RouterLink
               to="/videos"
