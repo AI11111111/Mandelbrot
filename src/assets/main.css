@@ -55,6 +55,7 @@ canvas {
 
 @media (min-width: 1024px) {
   main {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
