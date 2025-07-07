@@ -152,22 +152,6 @@ function drawAxes(ctx) {
   ctx.restore()
 }
 
-  // Vertikale Achse (Im)
-  ctx.beginPath()
-  ctx.moveTo(offsetX, 0)
-  ctx.lineTo(offsetX, height)
-  ctx.stroke()
-
-  // Beschriftung Im-Achse (gedreht)
-  ctx.save()
-  ctx.translate(offsetX + 15, 20)
-  ctx.rotate(-Math.PI / 2)
-  ctx.fillText('Im', 0, 0)
-  ctx.restore()
-
-  ctx.restore()
-}
-
 function drawPoint(ctx, x, y) {
   const px = offsetX + x * zoom
   const py = offsetY - y * zoom
