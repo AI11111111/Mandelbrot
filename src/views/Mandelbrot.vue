@@ -11,10 +11,11 @@
 
       <!-- Info Panel + Controls -->
       <div class="font-mono text-sm p-4 rounded shadow-inner flex flex-col justify-between  w-full h-screen bg-blue-100 landscape:bg-green-100">
-        <h2 class="text-2xl font-semibold pb-3">Mandelbrot-Iteration</h2>  <img
+        <h2 class="text-2xl font-semibold pb-3">Mandelbrot-Iteration</h2>
+        <img
         src="/src/assets/mandelbrot_qr.png"
         alt="QR-Code"
-        class="w-74 h-74 mx-auto mb-20 rounded-lg border border-gray-300 shadow"
+        class="QR w-74 h-74 mx-auto mb-20 rounded-lg border border-gray-300 shadow"
       />
 
         <p class="py-2">Iteration:
