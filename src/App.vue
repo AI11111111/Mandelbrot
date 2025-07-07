@@ -2,27 +2,22 @@
   <div class="min-h-screen bg-gray-50 text-gray-800 font-sans">
     <!-- Stylisierte Navigation -->
     <nav class="bg-white shadow sticky top-0 z-50">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center">
-          <h1 class="text-2xl font-bold hsla(160, 100%, 37%, 1)">Mandelbrot</h1>
-          <div class="flex space-x-6 text-sm font-medium">
+        <div class="flex justify-between items-center">
             <RouterLink
               to="/grafik"
-              class="transition duration-200 px-3 py-2 rounded  hover:text-blue-600"
-              :class="{ 'text-white': $route.path === '/grafik' }"
+              class="flex-2 text-center text-2xl font-bold  h-16"
+              :class="{ 'bg-[hsla(160,_100%,_37%,_.2)]': $route.path === '/grafik' }"
             >
-                <ImageIcon class="inline w-4 h-4 mr-1" /> Grafik
+              Grafik
             </RouterLink>
             <RouterLink
               to="/videos"
-              class="transition duration-200 px-3 py-2 rounded hover:bg-blue-100 hover:text-blue-600"
-              :class="{ 'text-white': $route.path === '/videos' }"
+              class="flex-2 text-center my-6 text-2xl font-bold  h-16"
+              :class="{ 'bg-[hsla(160,_100%,_37%,_.2)]': $route.path === '/videos' }"
             >
-              <Video class="inline w-4 h-4 mr-1" />  Videos
+              Videos
             </RouterLink>
-          </div>
         </div>
-      </div>
     </nav>
 
     <!-- Dynamischer Inhalt -->
