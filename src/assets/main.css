@@ -43,7 +43,7 @@ canvas {
 
 @media (min-width: 1024px) {
   body {
-    margin: 0;
+    padding: 0;
     display: flex;
     place-items: center;
   }
