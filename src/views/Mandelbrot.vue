@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center">
-    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 w-full h-screen bg-blue-100 landscape:bg-green-100">
+    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 w-full h-screen bg-blue-100 landscape:bg-green-100 mb-5">
       <!-- Canvas -->
       <canvas
         ref="canvas"
@@ -45,7 +45,7 @@
         <!-- Toggle Button -->
         <button
           @click="toggleAnimation"
-          class="my-6 w-full px-4 py-2 rounded text-white"
+          class="py-4 w-full px-4 rounded text-white"
           :class="isAnimating ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'"
         >
           {{ isAnimating ? 'Stop' : 'Start' }}
