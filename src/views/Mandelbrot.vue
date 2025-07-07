@@ -11,8 +11,7 @@
       ></canvas>
 
       <!-- Info Panel + Controls -->
-      <div class="w-72 font-mono text-sm bg-gray-100 p-4 rounded shadow-inner flex flex-col justify-between h-[500px]">
-        <div>
+      <div class="w-72 font-mono text-sm bg-gray-100 p-4 rounded shadow-inner flex flex-col justify-between h-[800px] w-full h-screen bg-blue-100 landscape:bg-green-100">
           <h2 class="text-xl font-semibold mb-4">Mandelbrot-Iteration</h2>
 
           <p class="py-2">Iteration:
@@ -42,7 +41,6 @@
           <p>yₙ = {{ yn.toFixed(4) }}</p>
           <p>xₙ₊₁ = {{ xnNext.toFixed(4) }}</p>
           <p>yₙ₊₁ = {{ ynNext.toFixed(4) }}</p>
-        </div>
 
         <!-- Toggle Button -->
         <button
@@ -61,9 +59,9 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const canvas = ref(null)
-const width = 700
+const width = 500
 const height = 500
-const zoom = 200
+const zoom = 100
 const offsetX = width / 1.5
 const offsetY = height / 2
 

@@ -21,7 +21,7 @@
     </nav>
 
     <!-- Dynamischer Inhalt -->
-    <main class="py-20 px-10 max-w-7xl mx-auto">
+    <main class="py-15 px-10 max-w-7xl mx-auto">
       <RouterView />
     </main>
   </div>
