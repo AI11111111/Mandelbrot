@@ -55,7 +55,9 @@ canvas {
 
 @media (max-width: 1024px) {
   main {
-    display: none;
     padding: 0;
+  }
+  .QR {
+    display: none;
   }
 }
