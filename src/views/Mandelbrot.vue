@@ -7,7 +7,6 @@
         :width="width"
         :height="height"
         class="border rounded shadow cursor-pointer"
-        @click="startPingPong"
       ></canvas>
 
       <!-- Info Panel + Controls -->
@@ -84,21 +83,82 @@ function drawAxes(ctx) {
   ctx.save()
   ctx.strokeStyle = 'black'
   ctx.lineWidth = 2
-  ctx.font = '20px sans-serif'
+  ctx.font = '14px sans-serif'
   ctx.fillStyle = 'black'
   ctx.textAlign = 'center'
+  ctx.textBaseline = 'top'
 
+  // Horizontale Achse (Re)
   ctx.beginPath()
   ctx.moveTo(0, offsetY)
   ctx.lineTo(width, offsetY)
   ctx.stroke()
-  ctx.fillText('Re', width - 20, offsetY - 10)
 
+  // Beschriftung "Re"
+  ctx.font = '20px sans-serif'
+  ctx.fillText('Re', width - 20, offsetY - 25)
+
+  // Zahlen an der Re-Achse
+  ctx.font = '14px sans-serif'
+  const step = 1  // Abstand der Markierungen in Einheiten
+  const numMarks = 10  // Anzahl der Markierungen
+
+  for (let i = -numMarks; i <= numMarks; i++) {
+    const xPos = offsetX + i * step * zoom
+    if (xPos < 0 || xPos > width) continue
+
+    // Tick
+    ctx.beginPath()
+    ctx.moveTo(xPos, offsetY - 5)
+    ctx.lineTo(xPos, offsetY + 5)
+    ctx.stroke()
+
+    // Zahlen
+    ctx.fillText(i * step, xPos, offsetY + 8)
+  }
+
+  // Vertikale Achse (Im)
   ctx.beginPath()
   ctx.moveTo(offsetX, 0)
   ctx.lineTo(offsetX, height)
   ctx.stroke()
 
+  // Beschriftung "Im"
+  ctx.save()
+  ctx.translate(offsetX + 15, 20)
+  ctx.rotate(-Math.PI / 2)
+  ctx.font = '20px sans-serif'
+  ctx.fillText('Im', 0, 0)
+  ctx.restore()
+
+  // Zahlen an der Im-Achse
+  ctx.textAlign = 'right'
+  ctx.textBaseline = 'middle'
+  for (let i = -numMarks; i <= numMarks; i++) {
+    const yPos = offsetY - i * step * zoom
+    if (yPos < 0 || yPos > height) continue
+
+    // Tick
+    ctx.beginPath()
+    ctx.moveTo(offsetX - 5, yPos)
+    ctx.lineTo(offsetX + 5, yPos)
+    ctx.stroke()
+
+    // Zahlen
+    if (i !== 0) {
+      ctx.fillText(i * step, offsetX - 8, yPos)
+    }
+  }
+  ctx.restore()
+}
+
+  // Vertikale Achse (Im)
+  ctx.beginPath()
+  ctx.moveTo(offsetX, 0)
+  ctx.lineTo(offsetX, height)
+  ctx.stroke()
+
+  // Beschriftung Im-Achse (gedreht)
   ctx.save()
   ctx.translate(offsetX + 15, 20)
   ctx.rotate(-Math.PI / 2)
@@ -210,14 +270,6 @@ function setManualIteration() {
   }
   maxIter.value = inputIter.value
   render()
-}
-
-// Start Ping-Pong-Animation bei Canvas-Klick
-function startPingPong() {
-  maxIter.value = 1
-  direction = 1
-  inputIter.value = 1
-  startAnimation()
 }
 
 onMounted(render)
