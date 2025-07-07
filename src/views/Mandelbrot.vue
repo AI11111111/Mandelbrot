@@ -11,7 +11,11 @@
 
       <!-- Info Panel + Controls -->
       <div class="font-mono text-sm p-4 rounded shadow-inner flex flex-col justify-between  w-full h-screen bg-blue-100 landscape:bg-green-100">
-        <h2 class="text-xl font-semibold mb-4">Mandelbrot-Iteration</h2>
+        <h2 class="text-2xl font-semibold pb-3">Mandelbrot-Iteration</h2>  <img
+        src="/src/assets/mandelbrot_qr.png"
+        alt="QR-Code"
+        class="w-74 h-74 mx-auto mb-20 rounded-lg border border-gray-300 shadow"
+      />
 
         <p class="py-2">Iteration:
           <span class="font-bold text-blue-600 text-xl">{{ maxIter }}</span>
@@ -39,7 +43,7 @@
         <p>xₙ = {{ xn.toFixed(4) }}</p>
         <p>yₙ = {{ yn.toFixed(4) }}</p>
         <p>xₙ₊₁ = {{ xnNext.toFixed(4) }}</p>
-        <p>yₙ₊₁ = {{ ynNext.toFixed(4) }}</p>
+        <p class="pb-2">yₙ₊₁ = {{ ynNext.toFixed(4) }}</p>
 
         <!-- Toggle Button -->
         <button

@@ -12,7 +12,7 @@
             </RouterLink>
             <RouterLink
               to="/videos"
-              class="flex-2 text-center my-6 text-2xl font-bold  h-16"
+              class="flex-2 text-center my-6 text-2xl font-bold h-16"
               :class="{ 'bg-[hsla(160,_100%,_37%,_.2)]': $route.path === '/videos' }"
             >
               Lernvideos
