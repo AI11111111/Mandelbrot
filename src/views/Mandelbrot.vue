@@ -60,9 +60,9 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 const canvas = ref(null)
 const width = 400
 const height = 400
-const zoom = 50
-const offsetX = width / 1.5
-const offsetY = height / 2
+const zoom = ref(50)
+const offsetX = ref(width / 1.5)
+const offsetY = ref(height / 2)
 
 const inputIter = ref(1)
 const maxIter = ref(1)
@@ -72,8 +72,9 @@ const x0 = ref(-0.75)
 const y0 = ref(0.25)
 const xn = ref(0)
 const yn = ref(0)
-const xnNext = ref(0)
-const ynNext = ref(0)
+const mouseX = ref(0)
+const mouseY = ref(0)
+const isHovering = ref(false)
 
 let animationFrameId = null
 let lastUpdate = 0
@@ -184,15 +185,14 @@ function render() {
 function mandelbrot(ctx) {
   for (let px = 0; px < width; px++) {
     for (let py = 0; py < height; py++) {
-      const cx = (px - offsetX) / zoom
-      const cy = (offsetY - py) / zoom
+      const cx = (px - offsetX.value) / zoom.value
+      const cy = (offsetY.value - py) / zoom.value
       let zx = 0, zy = 0
       let it = 1
       while (zx * zx + zy * zy <= 4 && it <= maxIter.value) {
         const xt = zx * zx - zy * zy + cx
         zy = 2 * zx * zy + cy
         zx = xt
-        it++
       }
       const c = it === maxIter.value + 1 ? 0 : (255 * it) / maxIter.value
       ctx.fillStyle = `rgb(${c}, 0, ${255 - c})`
@@ -222,6 +222,18 @@ function animate(timestamp) {
     if (maxIter.value >= 50 || maxIter.value <= 1) direction *= -1
     inputIter.value = maxIter.value
     render()
+    if (isHovering.value) {
+      const worldX = (mouseX.value - offsetX.value) / zoom.value
+      const worldY = (offsetY.value - mouseY.value) / zoom.value
+
+      const zoomFactor = 1.02
+      zoom.value *= zoomFactor
+
+      offsetX.value = mouseX.value - worldX * zoom.value
+      offsetY.value = mouseY.value + worldY * zoom.value
+
+      render()
+    }
     lastUpdate = timestamp
   }
   animationFrameId = requestAnimationFrame(animate)
@@ -256,8 +268,39 @@ function setManualIteration() {
   render()
 }
 
-onMounted(render)
-onBeforeUnmount(stopAnimation)
+function onMouseMove(event) {
+  const rect = canvas.value.getBoundingClientRect()
+  mouseX.value = event.clientX - rect.left
+  mouseY.value = event.clientY - rect.top
+
+  // Update x0 und y0 dynamisch bei Hover
+  x0.value = (mouseX.value - offsetX.value) / zoom.value
+  y0.value = (offsetY.value - mouseY.value) / zoom.value
+
+  render()
+}
+
+function onMouseEnter() {
+  isHovering.value = true
+}
+
+function onMouseLeave() {
+  isHovering.value = false
+}
+
+onMounted(() => {
+  stopAnimation()
+  canvas.value.removeEventListener('mousemove', onMouseMove)
+  canvas.value.removeEventListener('mouseenter', onMouseEnter)
+  canvas.value.removeEventListener('mouseleave', onMouseLeave)
+})
+
+onBeforeUnmount(() => {
+  stopAnimation()
+  canvas.value.removeEventListener('mousemove', onMouseMove)
+  canvas.value.removeEventListener('mouseenter', onMouseEnter)
+  canvas.value.removeEventListener('mouseleave', onMouseLeave)
+})
 </script>
 
 <style scoped>
