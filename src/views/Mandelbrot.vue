@@ -289,10 +289,10 @@ function onMouseLeave() {
 }
 
 onMounted(() => {
-  stopAnimation()
-  canvas.value.removeEventListener('mousemove', onMouseMove)
-  canvas.value.removeEventListener('mouseenter', onMouseEnter)
-  canvas.value.removeEventListener('mouseleave', onMouseLeave)
+  render()
+  canvas.value.addEventListener('mousemove', onMouseMove)
+  canvas.value.addEventListener('mouseenter', onMouseEnter)
+  canvas.value.addEventListener('mouseleave', onMouseLeave)
 })
 
 onBeforeUnmount(() => {
