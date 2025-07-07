@@ -46,9 +46,12 @@ canvas {
     display: flex;
     place-items: center;
   }
+  main {
+    padding: 0 2rem;
+  }
 
   #app {
     display: grid;
-    padding: 0;
+    padding: 0 2rem;
   }
 }
