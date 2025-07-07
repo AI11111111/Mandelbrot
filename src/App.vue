@@ -8,14 +8,14 @@
               class="flex-2 text-center text-2xl font-bold  h-16"
               :class="{ 'bg-[hsla(160,_100%,_37%,_.2)]': $route.path === '/grafik' }"
             >
-              Grafik
+              Mandelbrot – Grafik
             </RouterLink>
             <RouterLink
               to="/videos"
               class="flex-2 text-center my-6 text-2xl font-bold  h-16"
               :class="{ 'bg-[hsla(160,_100%,_37%,_.2)]': $route.path === '/videos' }"
             >
-              Videos
+              Lernvideos
             </RouterLink>
         </div>
     </nav>
