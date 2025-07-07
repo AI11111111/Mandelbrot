@@ -120,7 +120,7 @@ function drawPoint(ctx, x, y) {
   ctx.arc(px, py, 6, 0, 2 * Math.PI)
   ctx.fill()
   ctx.stroke()
-  ctx.fillStyle = 'black'
+  ctx.fillStyle = 'yellow'
   ctx.font = '20px sans-serif'
   ctx.textAlign = 'right'
   ctx.textBaseline = 'middle'
@@ -201,6 +201,13 @@ function toggleAnimation() {
 
 function setManualIteration() {
   stopAnimation()
+  // Begrenzung auf maximal 50
+  if (inputIter.value > 50) {
+    inputIter.value = 50
+  }
+  if (inputIter.value < 1) {
+    inputIter.value = 1
+  }
   maxIter.value = inputIter.value
   render()
 }
