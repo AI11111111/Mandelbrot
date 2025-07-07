@@ -11,7 +11,7 @@
       ></canvas>
 
       <!-- Info Panel + Controls -->
-      <div class="w-72 font-mono text-sm bg-gray-100 p-4 rounded shadow-inner flex flex-col justify-between  w-full h-screen bg-blue-100 landscape:bg-green-100">
+      <div class="font-mono text-sm p-4 rounded shadow-inner flex flex-col justify-between  w-full h-screen bg-blue-100 landscape:bg-green-100">
           <h2 class="text-xl font-semibold mb-4">Mandelbrot-Iteration</h2>
 
           <p class="py-2">Iteration:
@@ -59,8 +59,8 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const canvas = ref(null)
-const width = 500
-const height = 500
+const width = 400
+const height = 400
 const zoom = 100
 const offsetX = width / 1.5
 const offsetY = height / 2
