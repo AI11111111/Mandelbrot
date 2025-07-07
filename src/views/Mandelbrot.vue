@@ -146,9 +146,9 @@ function drawAxes(ctx) {
 
     // Zahlen
     if (i !== 0) {
-      ctx.fillText(i * step, offsetX - 8, yPos)
+      ctx.fillText(`${i}i`, offsetX - 8, yPos)
     }
-  }
+}
   ctx.restore()
 }
 
