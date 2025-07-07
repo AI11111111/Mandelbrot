@@ -43,7 +43,7 @@
         <p>xₙ = {{ xn.toFixed(4) }}</p>
         <p>yₙ = {{ yn.toFixed(4) }}</p>
         <p>xₙ₊₁ = {{ xnNext.toFixed(4) }}</p>
-        <p class="pb-2">yₙ₊₁ = {{ ynNext.toFixed(4) }}</p>
+        <p>yₙ₊₁ = {{ ynNext.toFixed(4) }}</p>
 
         <!-- Toggle Button -->
         <button
