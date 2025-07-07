@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center">
-    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 items-center">
+  <div class="flex items-center w-full h-screen bg-blue-100 landscape:bg-green-100">
+    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
       <!-- Canvas -->
       <canvas
         ref="canvas"
