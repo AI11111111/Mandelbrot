@@ -11,35 +11,35 @@
 
       <!-- Info Panel + Controls -->
       <div class="font-mono text-sm p-4 rounded shadow-inner flex flex-col justify-between  w-full h-screen bg-blue-100 landscape:bg-green-100">
-          <h2 class="text-xl font-semibold mb-4">Mandelbrot-Iteration</h2>
+        <h2 class="text-xl font-semibold mb-4">Mandelbrot-Iteration</h2>
 
-          <p class="py-2">Iteration:
-            <span class="font-bold text-blue-600 text-xl">{{ maxIter }}</span>
-          </p>
-          <input
-            v-model.number="inputIter"
-            type="number"
-            min="1"
-            max="1000"
-            class="w-full mt-2 px-2 py-2 rounded border text-blue-600 border-gray-300 focus:outline-none focus:ring"
-            @change="setManualIteration"
-          />
-          <hr class="py-2" />
+        <p class="py-2">Iteration:
+          <span class="font-bold text-blue-600 text-xl">{{ maxIter }}</span>
+        </p>
+        <input
+          v-model.number="inputIter"
+          type="number"
+          min="1"
+          max="1000"
+          class="w-full mt-2 px-2 py-2 rounded border text-blue-600 border-gray-300 focus:outline-none focus:ring"
+          @change="setManualIteration"
+        />
+        <hr class="py-2" />
 
-          <p>z₀ = 0 + 0i</p>
-          <p>zₙ₊₁ = zₙ² + c</p>
-          <p>z = x + yi</p>
-          <p>z² = (x² - y²) + 2xyi</p>
-          <br />
+        <p>z₀ = 0 + 0i</p>
+        <p>zₙ₊₁ = zₙ² + c</p>
+        <p>z = x + yi</p>
+        <p>z² = (x² - y²) + 2xyi</p>
+        <br />
 
-          <p class="text-base font-semibold">Dynamische Berechnung:</p>
-          <hr class="py-2" />
-          <p>x₀ = {{ x0.toFixed(4) }}</p>
-          <p>y₀ = {{ y0.toFixed(4) }}</p>
-          <p>xₙ = {{ xn.toFixed(4) }}</p>
-          <p>yₙ = {{ yn.toFixed(4) }}</p>
-          <p>xₙ₊₁ = {{ xnNext.toFixed(4) }}</p>
-          <p>yₙ₊₁ = {{ ynNext.toFixed(4) }}</p>
+        <p class="text-base font-semibold">Dynamische Berechnung:</p>
+        <hr class="py-2" />
+        <p>x₀ = {{ x0.toFixed(4) }}</p>
+        <p>y₀ = {{ y0.toFixed(4) }}</p>
+        <p>xₙ = {{ xn.toFixed(4) }}</p>
+        <p>yₙ = {{ yn.toFixed(4) }}</p>
+        <p>xₙ₊₁ = {{ xnNext.toFixed(4) }}</p>
+        <p>yₙ₊₁ = {{ ynNext.toFixed(4) }}</p>
 
         <!-- Toggle Button -->
         <button
@@ -60,9 +60,12 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 const canvas = ref(null)
 const width = 400
 const height = 400
-const zoom = ref(50)
-const offsetX = ref(width / 1.5)
-const offsetY = ref(height / 2)
+const zoom = 50
+const offsetX = width / 1.5
+const offsetY = height / 2
+
+const xnNext = ref(0)
+const ynNext = ref(0)
 
 const inputIter = ref(1)
 const maxIter = ref(1)
@@ -72,9 +75,6 @@ const x0 = ref(-0.75)
 const y0 = ref(0.25)
 const xn = ref(0)
 const yn = ref(0)
-const mouseX = ref(0)
-const mouseY = ref(0)
-const isHovering = ref(false)
 
 let animationFrameId = null
 let lastUpdate = 0
@@ -149,7 +149,7 @@ function drawAxes(ctx) {
     if (i !== 0) {
       ctx.fillText(`${i}i`, offsetX - 8, yPos)
     }
-}
+  }
   ctx.restore()
 }
 
@@ -185,14 +185,15 @@ function render() {
 function mandelbrot(ctx) {
   for (let px = 0; px < width; px++) {
     for (let py = 0; py < height; py++) {
-      const cx = (px - offsetX.value) / zoom.value
-      const cy = (offsetY.value - py) / zoom.value
+      const cx = (px - offsetX) / zoom
+      const cy = (offsetY - py) / zoom
       let zx = 0, zy = 0
       let it = 1
       while (zx * zx + zy * zy <= 4 && it <= maxIter.value) {
         const xt = zx * zx - zy * zy + cx
         zy = 2 * zx * zy + cy
         zx = xt
+        it++
       }
       const c = it === maxIter.value + 1 ? 0 : (255 * it) / maxIter.value
       ctx.fillStyle = `rgb(${c}, 0, ${255 - c})`
@@ -222,18 +223,6 @@ function animate(timestamp) {
     if (maxIter.value >= 50 || maxIter.value <= 1) direction *= -1
     inputIter.value = maxIter.value
     render()
-    if (isHovering.value) {
-      const worldX = (mouseX.value - offsetX.value) / zoom.value
-      const worldY = (offsetY.value - mouseY.value) / zoom.value
-
-      const zoomFactor = 1.02
-      zoom.value *= zoomFactor
-
-      offsetX.value = mouseX.value - worldX * zoom.value
-      offsetY.value = mouseY.value + worldY * zoom.value
-
-      render()
-    }
     lastUpdate = timestamp
   }
   animationFrameId = requestAnimationFrame(animate)
@@ -268,38 +257,13 @@ function setManualIteration() {
   render()
 }
 
-function onMouseMove(event) {
-  const rect = canvas.value.getBoundingClientRect()
-  mouseX.value = event.clientX - rect.left
-  mouseY.value = event.clientY - rect.top
-
-  // Update x0 und y0 dynamisch bei Hover
-  x0.value = (mouseX.value - offsetX.value) / zoom.value
-  y0.value = (offsetY.value - mouseY.value) / zoom.value
-
-  render()
-}
-
-function onMouseEnter() {
-  isHovering.value = true
-}
-
-function onMouseLeave() {
-  isHovering.value = false
-}
 
 onMounted(() => {
   render()
-  canvas.value.addEventListener('mousemove', onMouseMove)
-  canvas.value.addEventListener('mouseenter', onMouseEnter)
-  canvas.value.addEventListener('mouseleave', onMouseLeave)
 })
 
 onBeforeUnmount(() => {
   stopAnimation()
-  canvas.value.removeEventListener('mousemove', onMouseMove)
-  canvas.value.removeEventListener('mouseenter', onMouseEnter)
-  canvas.value.removeEventListener('mouseleave', onMouseLeave)
 })
 </script>
 
