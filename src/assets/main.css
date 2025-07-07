@@ -47,7 +47,7 @@ canvas {
     place-items: center;
   }
   main {
-    padding: 0 2rem;
+    padding: 0;
   }
 
   #app {
