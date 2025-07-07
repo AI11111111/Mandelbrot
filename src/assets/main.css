@@ -53,7 +53,7 @@ canvas {
   }
 }
 
-@media (man-width: 1024px) {
+@media (max-width: 1024px) {
   main {
     padding-left: 0;
     padding-right: 0;
