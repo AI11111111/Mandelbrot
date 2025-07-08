@@ -101,7 +101,7 @@ function drawAxes(ctx) {
   ctx.stroke()
 
   // Beschriftung "Re"
-  ctx.font = '20px sans-serif'
+  ctx.font = '16px sans-serif'
   ctx.fillText('Re', width - 20, offsetY - 25)
 
   // Zahlen an der Re-Achse
@@ -174,7 +174,7 @@ function drawPoint(ctx, x, y) {
   ctx.font = '12px sans-serif'
   ctx.textAlign = 'right'
   ctx.textBaseline = 'middle'
-  ctx.fillText(`c = (${x.toFixed(2)}, ${y.toFixed(2)})`, px - 15, py)
+  ctx.fillText(`c = x + yi (${x.toFixed(2)}, ${y.toFixed(2) + 'i'})`, px - 15, py)
   ctx.restore()
 }
 
