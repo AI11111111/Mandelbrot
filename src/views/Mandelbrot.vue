@@ -2,7 +2,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left pb-10">
     <!-- Linke Spalte: Gegeben -->
     <div>
-      <h2 class="text-xl font-bold mb-2">Gegeben:</h2>
+      <h2 class="text-xl font-bold pb-2">Gegeben:</h2>
       <Katex expression="z_0 =\:" />
       <Katex expression="\color{red}{ 0 + 0i}" />
       <br>
@@ -12,14 +12,14 @@
 
     <!-- Rechte Spalte: Iterationen -->
     <div>
-      <h2 class="text-xl font-bold mb-2">Erste Iteration:</h2>
+      <h2 class="text-xl font-bold pb-2">Erste Iteration:</h2>
       <Katex expression="z_1 =\:" />
       <Katex expression="\color{red}{z_0^2}" />
       <Katex expression="\:+\:\color{green}{c}\\" />
       <Katex expression="z_1 =\color{red}{0^2}\:" />
       <Katex expression="+\:\color{green}{(-0.75 + 0.25i)}\:" />
       <Katex expression="= \color{blue}-0.75 + 0.25i" />
-      <h2 class="text-xl font-bold mb-2">Zweite Iteration:</h2>
+      <h2 class="text-xl font-bold py-2">Zweite Iteration:</h2>
       <Katex expression="z_2 = \color{blue}{z_1^2}\:"/>
       <Katex expression="+\:\color{green}{c}\\"/>
       <Katex expression="z_2 =\color{blue}{(-0.75 + 0.25i)^2}\:"/>
