@@ -164,14 +164,14 @@ function drawPoint(ctx, x, y) {
 
   ctx.save()
   ctx.fillStyle = 'yellow'
-  ctx.strokeStyle = 'bg-green-500'
+  ctx.strokeStyle = 'yellow'
   ctx.lineWidth = 2
   ctx.beginPath()
-  ctx.arc(px, py, 6, 0, 2 * Math.PI)
+  ctx.arc(px, py, 2, 0, 2 * Math.PI)
   ctx.fill()
   ctx.stroke()
   ctx.fillStyle = 'yellow'
-  ctx.font = '20px sans-serif'
+  ctx.font = '12px sans-serif'
   ctx.textAlign = 'right'
   ctx.textBaseline = 'middle'
   ctx.fillText(`c = (${x.toFixed(2)}, ${y.toFixed(2)})`, px - 15, py)
