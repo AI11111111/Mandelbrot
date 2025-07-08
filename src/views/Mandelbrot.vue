@@ -1,4 +1,21 @@
 <template>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left pb-10">
+    <!-- Linke Spalte: Gegeben -->
+    <div>
+      <h2 class="text-xl font-bold mb-2">Gegeben:</h2>
+      <Katex expression="z_0 = 0 + 0i" />
+      <br>
+      <Katex expression="c = -0.75 + 0.25i" />
+    </div>
+
+    <!-- Rechte Spalte: Iterationen -->
+    <div>
+      <h2 class="text-xl font-bold mb-2">Erste Iteration:</h2>
+      <Katex expression="z_1 = z_0^2 + c = 0^2 + (-0.75 + 0.25i) = -0.75 + 0.25i" />
+      <h2 class="text-xl font-bold mb-2">Zweite Iteration:</h2>
+      <Katex expression="z_2 = z_1^2 + c = (-0.75 + 0.25i)^2 + (-0.75 + 0.25i) = -0.1875 - 0.125i"/>
+    </div>
+  </div>
   <div class="flex items-center">
     <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6 w-full h-screen bg-blue-100 landscape:bg-green-100 mb-5">
       <!-- Canvas -->
@@ -61,6 +78,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import Katex from '@/views/Katex.vue'
 
 const canvas = ref(null)
 const width = 400
