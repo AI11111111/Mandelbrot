@@ -21,15 +21,15 @@
 const videos = [
   {
     id: 'dctJ7ISkU-4',
-    title: 'Was ist die Mandelbrot-Menge?',
+    title: '',
   },
   {
     id: 'IKG7AW2lmt0',
-    title: 'Komplexe Zahlen erklärt',
+    title: '',
   },
   {
     id: '_78kGnsYXLc',
-    title: 'Visualisierung der Iteration',
+    title: '',
   },
 ]
 
