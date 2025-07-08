@@ -3,7 +3,7 @@
     <!-- Linke Spalte: Gegeben -->
     <div>
       <h2 class="text-xl font-bold mb-2">Gegeben:</h2>
-      <Katex expression="z_0 ="/>
+      <Katex expression="z_0 = "/>
       <Katex expression=" "/>
       <Katex expression= " 0 + 0i" class="text-red-600" />
       <br>
