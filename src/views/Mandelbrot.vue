@@ -28,6 +28,8 @@
       <Katex expression="=\color{blue}{(-0.75 + 0.25i)^2}\:"/>
       <Katex expression="+\:\color{green}{(-0.75 + 0.25i)}\:"/>
       <Katex expression="= \color{magenta}{-0.1875 - 0.125i}"/>
+      <h2 class="text-xl font-bold py-2">n-te Iteration:</h2>
+      <Katex expression="z_{n+1} = z_n^2 + c" />
     </div>
   </div>
   <div class="flex items-center">
