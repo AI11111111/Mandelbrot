@@ -13,18 +13,21 @@
     <!-- Rechte Spalte: Iterationen -->
     <div>
       <h2 class="text-xl font-bold pb-2">Erste Iteration:</h2>
-      <Katex expression="z_1 =\:" />
-      <Katex expression="\color{red}{z_0^2}" />
+      <Katex expression="\color{blue}{z_1}\:" />
+      <Katex expression="=\:\color{red}{z_0^2}" />
       <Katex expression="\:+\:\color{green}{c}\\" />
-      <Katex expression="z_1 =\color{red}{0^2}\:" />
+      <Katex expression="\color{blue}{z_1}\:" />
+      <Katex expression="=\color{red}{0^2}\:" />
       <Katex expression="+\:\color{green}{(-0.75 + 0.25i)}\:" />
       <Katex expression="= \color{blue}-0.75 + 0.25i" />
       <h2 class="text-xl font-bold py-2">Zweite Iteration:</h2>
-      <Katex expression="z_2 = \color{blue}{z_1^2}\:"/>
+      <Katex expression="\color{magenta}{z_2}\:"/>
+      <Katex expression="=\:\color{blue}{z_1^2}\:"/>
       <Katex expression="+\:\color{green}{c}\\"/>
-      <Katex expression="z_2 =\color{blue}{(-0.75 + 0.25i)^2}\:"/>
+      <Katex expression="\color{magenta}{z_2}\:"/>
+      <Katex expression="=\color{blue}{(-0.75 + 0.25i)^2}\:"/>
       <Katex expression="+\:\color{green}{(-0.75 + 0.r25i)}\:"/>
-      <Katex expression="= -0.1875 - 0.125i"/>
+      <Katex expression="= \color{magenta}{-0.1875 - 0.125i}"/>
     </div>
   </div>
   <div class="flex items-center">
