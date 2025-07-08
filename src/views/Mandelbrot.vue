@@ -65,15 +65,6 @@
         <p>z² = (x² - y²) + 2xyi</p>
         <br />
 
-        <p class="text-base font-semibold">Dynamische Berechnung:</p>
-        <hr class="py-2" />
-        <p>x₀ = {{ x0.toFixed(4) }}</p>
-        <p>y₀ = {{ y0.toFixed(4) }}</p>
-        <p>xₙ = {{ xn.toFixed(4) }}</p>
-        <p>yₙ = {{ yn.toFixed(4) }}</p>
-        <p>xₙ₊₁ = {{ xnNext.toFixed(4) }}</p>
-        <p>yₙ₊₁ = {{ ynNext.toFixed(4) }}</p>
-
         <!-- Toggle Button -->
         <button
           @click="toggleAnimation"
